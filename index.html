@@ -25,7 +25,7 @@
             </ul>
 
         </nav>
-        <h1>Titlu 1</h1>
+        <h1 class="title">Titlu 1</h1>
         <h2>Titlu 2</h2>
         <h3>Titlu 3</h3>
         <h4>Titlu 4</h4>
@@ -35,10 +35,11 @@
     <main>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, atque illo reiciendis quo dolores eum excepturi
         sunt. Distinctio maiores modi provident magni esse vitae! Et labore quasi quae exercitationem rem.
-
         <hr>
-        <button>Test </button>
-        </hr>
+        <button onclick="count()">Test function</button>
+        <hr>
+        <button onclick="console.log('Button Clicked!')">Test </button>
+        <hr>
         <input type="button" value="Button from input">
         <hr><input type="color" name="Culoare"></hr>
         <hr><input type="date" name="data"></hr>
@@ -76,6 +77,7 @@
         <hr>
         <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim architecto culpa iure fugiat deleniti numquam amet in vitae consectetur. Officiis dolor voluptates nobis vero tempora cum neque, inventore sint pariatur!</div>
         <hr>
+        <canvas id="draw1"></canvas>
     </main>
 
 
@@ -83,10 +85,27 @@
         Copyright &copy; 2024
     </footer>
     <!-- adaugare fisiere externe de JS -->
-    <script src+"script.js"></script>
+    <script src="script.js"></script>
+
     <script>
         console.log("Salut din consola!")
+        let counter=0;
+        function count()
+        {
+            counter++;
+            console.log(counter);
+        }
+        const canvas=document.getElementById("draw1");
+        const ctx=canvas.getContext("2d");
+        ctx.fillStyle="red";
+        ctx.fillRect(10,10,150,100);
     </script>
+    <script type="module" src="script.counter.js"></script>
+    <script>
+        import{count} from "script-counter.js"
+    </script>
+    <script type="module" src="script-module-way.js"></script>
+    <script type="module" src="style.css"></script>
 </body>
 
 </html>
